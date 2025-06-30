@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/1.gif"/>
+    <title></title> </head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+        <img src="img/1.gif" class="logo" alt="Logo">
+        <div class="card">
+            <img class="card-ascii-img" src="img/0.png" alt="ASCII Art">
+            
+            <div class="card-avatar">
+                <img src="img/Mr robot.jfif" alt="Avatar">
+            </div>
+            
+            <div class="card-title">
+                <p>Kanto</p>
+            </div>
+            
+            <div class="languages-container">
+                <div class="language-item">
+                    <img src="img/python-logo.png" alt="Python" class="language-logo">
+                    <span>Python</span>
+                </div>
+                <div class="language-item">
+                    <img src="img/html-logo.png" alt="HTML" class="language-logo">
+                    <span>HTML</span>
+                </div>
+                <div class="language-item">
+                    <img src="img/css-logo.png" alt="CSS" class="language-logo">
+                    <span>CSS</span>
+                </div>
+            </div>
+            
+            <div class="country-info">
+                <p class="description2">
+                    <span class="country-number">12y</span> / 
+                    <img class="country-flag" src="img/pl.jpg" alt="Flag">
+                </p>
+            </div>
+              
+            <div class="social-buttons">
+                <a href="https://open.spotify.com/playlist/0XRvDp74bvDpSepfaIfSr7?si=5eb91cb1872a4704" target="_blank" class="social-button spotify">
+                    <img src="img/spotify-logo.png" alt="Spotify">
+                </a>
+                <a href="https://discord.gg/kntz" target="_blank" class="social-button discord">
+                    <img src="img/discord-logo.png" alt="Discord">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="js/tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelector(".card"), {
+            max: 20,
+            speed: 200,
+            reverse: true,
+            easing: "cubic-bezier(.03,.98,.52,.99)",
+            glare: false,
+        });
+    </script>
+    <script src="js/script.js"></script> 
+</body>
+</html>

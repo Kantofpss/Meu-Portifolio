@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Fundo gradiente */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #4b4b57 0%, #152031 100%);
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Layout principal */
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+/* Logo */
+.logo {
+    width: 250px;
+    height: 250px;
+    margin-top: -120px;
+    object-fit: contain;
+    z-index: 1;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.2));
+}
+
+/* Card principal com animações melhoradas */
+.card {
+    width: 90vw;
+    max-width: 450px;
+    min-height: 500px;
+    background-color: rgba(10, 42, 146, 0.541);
+    backdrop-filter: blur(7px);
+    border-radius: 26px;
+    box-shadow: 
+        35px 35px 68px 0px rgba(44, 56, 226, 0.473), 
+        inset -8px -8px 16px 0px rgba(59, 71, 97, 0.6), 
+        inset 0px 11px 28px 0px rgb(126, 124, 124);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.2s; /* Transição melhorada */
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 35px 35px 68px 0px rgba(11, 18, 119, 0.5); /* Efeito de hover melhorado */
+}
+  
+.card:active {
+    transform: scale(0.95); /* Efeito de clique */
+    border: 1px solid rgba(237, 237, 255, 0.26);
+}
+
+/* Estilo do banner */
+.card-ascii-img {
+    margin-top: 25px;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    max-height: 170px;
+    border-radius: 1.5rem;
+}
+
+/* Animação de pulso do boastyle.css */
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.card-avatar {
+    height: 100px;
+    position: relative;
+    width: 100px;
+    /* A propriedade 'left' foi removida para usar o alinhamento central do flexbox. */
+    bottom: 34px;
+    z-index: 2;
+}
+
+.card-avatar img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+}
+
+/* Elementos da animação de pulso */
+.card-avatar::before,
+.card-avatar::after {
+    animation: pulse 2s linear infinite;
+    border: #fff solid 8px;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    content: ' ';
+    height: 140%;
+    left: -20%;
+    opacity: .6;
+    position: absolute;
+    top: -20%;
+    transform: scale(0.714);
+    width: 140%;
+    z-index: 1;
+}
+
+.card-avatar::after {
+    animation-delay: 1s;
+}
+
+/* Título */
+.card-title {
+    width: 100%;
+    text-align: center;
+    margin-top: -29px; /* Ajuste para compensar a subida do avatar */
+}
+
+.card-title p {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to top left, #7C7C7C 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Linguagens */
+.languages-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0 1rem;
+    flex-wrap: wrap;
+}
+
+.language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.language-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.language-item:hover .language-logo {
+    transform: scale(1.1);
+}
+
+.language-item span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: linear-gradient(to top left, #7c7c7c 0%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Info país */
+.country-info {
+    margin: 0.5rem 0;
+}
+
+.description2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(to top left, #FFFFFF 0%, #7C7C7C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.country-number {
+    font-size: 1.1rem;
+    background: linear-gradient(to top left, #FFFFFF 0%, #7C7C7C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.country-flag {
+    width: 23px;
+    height: 13px;
+    border-radius: 2px;
+    object-fit: cover;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+/* Botões sociais */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.social-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-button img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.spotify img {
+    filter: brightness(0) saturate(100%) invert(63%) sepia(86%) saturate(376%) hue-rotate(81deg) brightness(91%) contrast(88%);
+}
+
+.discord img {
+    filter: brightness(0) saturate(100%) invert(39%) sepia(90%) saturate(749%) hue-rotate(193deg) brightness(93%) contrast(91%);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo {
+        width: 180px;
+        height: 180px;
+        margin-top: -90px;
+    }
+    
+    .card {
+        min-height: 450px;
+    }
+    
+    .card-title p {
+        font-size: 1.7rem;
+    }
+    
+    .card-ascii-img {
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 1rem;
+    }
+    
+    .logo {
+        width: 150px;
+        height: 150px;
+        margin-top: -75px;
+    }
+    
+    .card {
+        min-height: 400px;
+        padding: 1rem;
+    }
+    
+    .card-ascii-img {
+        max-height: 80px;
+    }
+    
+    .social-button {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-button img {
+        width: 24px;
+        height: 24px;
+    }
+}
